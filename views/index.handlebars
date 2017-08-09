@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+#bar{
+padding-top: 40px;
+color:#B2BABB;
+}
+#bar2{
+padding-top: 20px;
+color:#B2BABB
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #FEA299;
+}
+tr:nth-child(odd) {
+    background-color: #FEA299;
+}
+</style>
+</head>
+<body>
+<h1>Tariff Details</h1>
+<div>
+<table>
+  <tr>
+    <th>Rooms & Suites</th>
+    <th>Cost Per Day</th>
+    <th>Discount Available</th>
+  </tr>
+  <tr>
+    <td>Deluxe Rooms</td>
+    <td>₹18000</td>
+    <td>10%</td>
+  </tr>
+  <tr>
+    <td>Luxury Rooms</td>
+    <td>₹24000</td>
+    <td>8%</td>
+  </tr>
+  <tr>
+    <td>Ruby Lion Club Rooms</td>
+    <td>₹14000</td>
+    <td>10%</td>
+  </tr>
+  <tr>
+    <td>Executive Balcony Suite</td>
+    <td>₹38000</td>
+    <td>13%</td>
+  </tr>
+  <tr>
+    <td>Luxury Suite</td>
+    <td>₹48000</td>
+    <td>20%</td>
+  </tr>
+  <tr>
+    <td>Grand Presidential Suite</td>
+    <td>₹78000</td>
+    <td>16%</td>
+  </tr>
+</table>
+</div>
+<div id="bar">
+<h5>Select Room</h5>
+<select>
+  <option value="Deluxe Rooms">Deluxe Rooms</option>
+  <option value="Luxury Rooms">Luxury Rooms</option>
+  <option value="Ruby Lion Club Rooms">Ruby Lion Club Rooms</option>
+  <option value="Executive Balcony Suite">Executive Balcony Suite</option>
+  <option value="Luxury Suite">Luxury Suite</option>
+  <option value="Grand Presidential Suite">Grand Presidential Suite</option>
+</select>
+</div>
+<div id="bar2">
+<h5>Number Of Days</h5>
+<select>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+</select>
+</div>
+<div id=bar2>
+<button type="button" onclick="myFunction()">Book Room</button>
+</div>
+<div id="snackbar">Booked!</div>
+
+
+<script>
+function myFunction() {
+    var x = document.getElementById("snackbar")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+
+</body>
+</html>

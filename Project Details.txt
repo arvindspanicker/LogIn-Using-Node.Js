@@ -1,0 +1,4 @@
+It uses mongodb local db to store the username and password
+so it has validation and authentication process in it.
+It use express module, bcrypt module to hash the password, 
+routing module to switch between pages, passport module for authentification etc.

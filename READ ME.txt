@@ -1,0 +1,27 @@
+This System uses MongoDb.
+So please install mongodb and set the path for log and db.
+
+
+Then open cmd on this folder,
+then execute the following instructions:
+
+npm install
+npm start
+
+
+After that you will recieve a message about the server being run at port 8080
+
+so type
+localhost:8080 in the browser.
+
+
+Thanks.
+
+
+
+
+
+
+
+
+

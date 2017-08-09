@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ruby Lion Hotel</title>
+	<link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+  <style>
+  .mySlides {display:none;}
+  #bar3{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    width: 709px;
+    height:300px;
+  }
+</style>
+</head>
+<body>
+	<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            {{#if user}}             
+              <li role="presentation"><a href="/users/logout">Logout</a></li>
+            {{else}}
+              <li role="presentation"><a href="/users/login">Login</a></li>
+              <li role="presentation"><a href="/users/register">Register</a></li>
+            {{/if}}
+          </ul>
+        </nav>
+        <h3 class="text-muted"><font size="12" color="#E36226">Ruby Lion Hotel & Spa</font></h3>
+      </div>
+      <div id="bar3">
+<div class="w3-content w3-section" style="max-width:712px;border:3px solid #E71703;">
+  <img class="mySlides" src="https://adorable-home.com/wp-content/gallery/top-10-amazing-hotel-views/top-10-amazing-hotel-views-5.jpg?x45919" style="width:704px;height:300px;"">
+  <img class="mySlides" src="http://www.hotelamazingnyaungshwe.com/images/gallery/home/thehotelgallery_03.jpg" style="width:704px;height:300px;">
+  <img class="mySlides" src="http://www.travelplusstyle.com/wp-content/uploads/2016/01/sonevajani-1880.jpg" style="width:704px;height:300px;">
+  <img class="mySlides" src="http://resources.touropia.com/gfx/d/amazing-hotels-in-italy/Grand_Hotel_Minerva.jpg" style="width:704px;height:300px;">
+  <img class="mySlides" src="http://www.sunsetpools.com.au/wp-content/uploads/2012/11/Commercial-Pool-Building-Project-4.jpg" style="width:704px;height:300px;">
+  <img class="mySlides" src="http://static.asiawebdirect.com/m/bangkok/portals/bangkok-com/shared/teasersL/TOP10/top-10-luxury-hotels-in-bangkok/teaserMultiLarge/image/1.jpg" style="width:704px;height:300px;">
+  <img class="mySlides" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTOrnlETO0StBoJn48UcL4GBc4uihDE8a8ovAHUL5nfStTejlDR" style="width:704px;height:300px;">
+  <img class="mySlides" src="https://i.ytimg.com/vi/QN1O-L9Bl54/maxresdefault.jpg" style="width:704px;height:300px;">
+  <img class="mySlides" src="http://shebudgets.toobnetwork.com/wp-content/uploads/sites/2/2016/10/Fancy-Hotel.jpg" style="width:704px;height:300px;">
+</div>
+</div>
+      <div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          
+          {{{body}}}
+        </div> 
+      </div>
+      <footer class="footer">
+        <p>&copy; 2017 Ruby Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+    <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<style>
+.block{
+    padding-top:10px;
+    height:100%
+    width:20px;
+    left: 0px;
+  }
+  .blink_text { 
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 3s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 3s;
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite; color: red; 
+} 
+
+@-moz-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1.0; } 
+}
+
+@-webkit-keyframes blinker { 
+    0% { opacity: 1.0; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1.0; } 
+} 
+
+@keyframes blinker { 
+    0% { opacity: 1.0; } 
+    50% { opacity: 0.3; } 
+    100% { opacity: 1.0; } 
+}
+</style>
+<h2 class="page-header">Register</h2>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<form method="post" action="/users/register">
+   <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Name" name="name">
+  </div>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" placeholder="Username" name="username">
+  </div>
+   <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="Email" name="email">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="password">
+  </div>
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="password2">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<div class="block">
+  <h4><div class="blink_text">Offers!</div></h4>
+  <marquee >Register Now! and Avail Great Discounts!</marquee>
+ </div>
